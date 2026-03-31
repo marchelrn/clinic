@@ -10,38 +10,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Iosevka+Charon:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-
-    <style>
-        /* Memastikan font Iosevka diterapkan ke seluruh halaman */
-        body, .font-iosevka {
-            font-family: 'Iosevka Charon', monospace;
-            background-color: #fcfcfc; /* Warna background soft agar elemen card terlihat menonjol */
-        }
-
-        .card {
-            border-radius: 15px;
-            border: none;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
-
-        .btn-primary {
-            background-color: #0d6efd;
-            border-radius: 8px;
-            padding: 10px;
-        }
-
-        /* Styling Filter Select agar konsisten dengan gaya minimalis Beranda */
-        .form-select {
-            border: 1px solid #eee;
-            border-radius: 10px;
-            padding: 10px;
-        }
-    </style>
 </head>
 
-<body>
-    <header>
-        <nav class="navbar navbar-expand-lg bg-white border-bottom shadow-sm">
+<header>
+        <nav class="navbar navbar-expand-lg bg-white">
             <div class="container-fluid text-center font-iosevka">
                 <a class="navbar-brand mx-5 text-dark" href="#"> <strong>Klinik Sehat</strong></a>
                 <div class="collapse navbar-collapse align-items-center" id="navbarSupportedContent">
@@ -68,7 +40,8 @@
         </nav>
     </header>
 
-    <main class="container my-5">
+<body class="bg-body-secondary">
+    <main class="container mt-4 font-iosevka">
         <div class="mb-4">
             <h2 class="fw-bold">Jadwal Dokter</h2>
             <p class="text-muted">Lihat jadwal praktek dokter dan buat janji temu</p>
@@ -129,7 +102,7 @@
                             <span>Ruang 101</span>
                         </div>
                     </div>
-                    <button class="btn btn-primary w-100 mt-auto fw-bold">Buat Janji Temu</button>
+                    <button class="btn btn-primary w-100 mt-auto fw-bold"><a href="signup.html" class="text-white text-decoration-none">Buat Janji Temu</a></button>
                 </div>
             </div>
 
@@ -158,7 +131,7 @@
                             <span>Ruang 102</span>
                         </div>
                     </div>
-                    <button class="btn btn-primary w-100 mt-auto fw-bold">Buat Janji Temu</button>
+                    <button class="btn btn-primary w-100 mt-auto fw-bold"><a href="signup.html" class="text-white text-decoration-none">Buat Janji Temu</a></button>
                 </div>
             </div>
         </div>
@@ -166,6 +139,4 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-
 </html>
