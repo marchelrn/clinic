@@ -16,26 +16,35 @@
     <nav class="navbar navbar-expand-lg bg-white">
       <div class="container-fluid text-center font-iosevka">
         <a class="navbar-brand mx-5 text-dark" href="#"> <strong>Klinik Sehat</strong></a>
-        <div class="collapse navbar-collapse align-items-center " id="navbarSupportedContent">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse align-items-center" id="navbarSupportedContent">
           <ul class="navbar-nav mx-auto gap-3 mb-2 mb-lg-0 gx-5">
             <li class="nav-item"><a class="nav-link active text-dark fw-bold" aria-current="page" href="#">Beranda</a></li>
             <li class="nav-item"><a class="nav-link text-dark" aria-current="page" href="src/schedule.html">Jadwal Dokter</a></li>
             <li class="nav-item"><a class="nav-link text-dark" aria-current="page" href="src/reservation.html">Reservasi</a></li>
             <li class="nav-item"><a class="nav-link text-dark" aria-current="page" href="src/queue.html">Antrean</a></li>
+            <li class="nav-item d-lg-none"> <!-- If display Large this list would be hidden  -->
+              <a class="nav-link text-dark" href="src/signup.html">
+                <img src="https://ui-avatars.com/api/?rounded=true&name=Minda+Musuma&background=000&color=ffff&size=100" width="35" height="35" class="img-fluid me-2">
+                Minda Musuma
+              </a>
+            </li>
           </ul>
+          <a href="src/signup.html" class="d-none d-lg-block"> <!-- if display under large this list would be active-->
+            <picture class="mx-5">
+              <source srcset="https://ui-avatars.com/api/?rounded=true&name=Minda+Musuma&background=000&color=ffff&size=100" type="image/png">
+              <img src="https://ui-avatars.com/api/?rounded=true&name=Minda+Musuma&background=0000&color=ffff&size=100" width="35" height="35" class="img-fluid">
+            </picture>
+          </a>
         </div>
-        <a href="src/signup.html">
-          <picture class="mx-5">
-            <source srcset="https://ui-avatars.com/api/?rounded=true&name=Minda+Musuma&background=000&color=ffff&size=100" type="image/png">
-            <img src="https://ui-avatars.com/api/?rounded=true&name=Minda+Musuma&background=0000&color=ffff&size=100" width="35" height="35" class="img-fluid">
-          </picture>
-        </a>
       </div>
     </nav>
   </header>
   
   <body class="bg-body-secondary">
-    <div class="container mx-5 mt-4">
+    <div class="container mx-auto mt-4">
         <div class="text-gray-800 font-iosevka"> 
             <h2>Selamat Datang di Klinik Sehat</h2>
             <p class="text-muted">Sistem Penjadwalan Dokter dan Reservasi Antrean</p>
