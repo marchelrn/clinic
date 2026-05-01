@@ -5,6 +5,9 @@ use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 use Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful;
 use Illuminate\Auth\Middleware\Authenticate;
+use App\Helpers\ApiResponse;
+use Illuminate\Http\Request;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -20,12 +23,15 @@ return Application::configure(basePath: dirname(__DIR__))
             EnsureFrontendRequestsAreStateful::class,
         ]);
 
-        // 🔥 FIX ERROR login route tidak ada
         $middleware->redirectGuestsTo(function () {
             return null; // jangan redirect ke route login
         });
 
-    })
-    ->withExceptions(function (Exceptions $exceptions): void {
-        //
     })->create();
+    // ->withExceptions(function (Exceptions $exceptions) {
+    //     $exceptions->render(function (NotFoundHttpException $e, Request $request) {
+    //         if ($request->is('api/*')) {
+    //             return ApiResponse::error('Resource not found', 404);
+    //         }
+    //     });
+    // })

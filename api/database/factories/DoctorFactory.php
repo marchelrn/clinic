@@ -25,11 +25,12 @@ class DoctorFactory extends Factory
     public function definition(): array
     {
         return [
+
             'name' => fake()->name(),
             'specialization' => fake()->jobTitle(),
             'email' => fake()->unique()->safeEmail(),
             'password' => static::$password ??= Hash::make('password'),
-            'phone' => fake()->phoneNumber(),
+            'phone' => fake()->numerify('0##########'),
         ];
     }
 }

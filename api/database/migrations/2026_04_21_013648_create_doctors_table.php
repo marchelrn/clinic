@@ -16,8 +16,10 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('specialization');
-            $table->integer('phone')->unique();
+            $table->bigInteger('phone')->unique();
             $table->string('email')->unique();
+            $table->string('password');
+            $table->enum('status', ['active', 'inactive'])->default('active');
             $table->timestamps();
         });
 

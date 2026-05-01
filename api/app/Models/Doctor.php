@@ -13,7 +13,11 @@ class Doctor extends Authenticatable
     
     protected $fillable = [
         'name',
-        'specialization'    
+        'specialization',
+        'phone',
+        'email',
+        'password',
+        'status'
     ];
 
     public function schedules()
