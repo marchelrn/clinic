@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/layouts.astro";
+import Links from "../components/links.astro";
 const title = "Klinik Sehat | Jadwal Dokter";
 ---
 
@@ -7,9 +8,12 @@ const title = "Klinik Sehat | Jadwal Dokter";
     <header>
         <nav class="navbar navbar-expand-lg bg-white">
             <div class="container-fluid text-center font-iosevka">
-                <a class="navbar-brand mx-5 text-dark" href="#">
-                    <strong>Klinik Sehat</strong></a
+                <Links
+                    href="/"
+                    cssClass="navbar-brand mx-5 text-dark"
                 >
+                    <strong>Klinik Sehat</strong>
+                </Links>
                 <button
                     class="navbar-toggler"
                     type="button"
@@ -27,35 +31,47 @@ const title = "Klinik Sehat | Jadwal Dokter";
                 >
                     <ul class="navbar-nav mx-auto gap-3 mb-2 mb-lg-0 gx-5">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="/">Beranda</a>
+                            <Links
+                                href="/"
+                                cssClass="nav-link text-dark"
+                            >
+                                Beranda
+                            </Links>
                         </li>
                         <li class="nav-item">
-                            <a
-                                class="nav-link active text-dark fw-bold"
-                                href="/schedule">Jadwal Dokter</a
+                            <Links
+                                href="/schedule"
+                                cssClass="nav-link active text-dark fw-bold"
                             >
+                                Jadwal Dokter
+                            </Links>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="/reservation"
-                                >Reservasi</a
+                            <Links
+                                href="/reservation"
+                                cssClass="nav-link text-dark"
                             >
+                                Reservasi
+                            </Links>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="/queue"
-                                >Antrean</a
+                            <Links
+                                href="/queue"
+                                cssClass="nav-link text-dark"
                             >
+                                Antrean
+                            </Links>
                         </li>
                         <li class="nav-item d-lg-none">
                             <!-- If display Large this list would be hidden  -->
-                            <a class="nav-link text-dark" href="/signup">
-                                <img
-                                    src="https://ui-avatars.com/api/?rounded=true&name=Minda+Musuma&background=000&color=ffff&size=100"
-                                    width="35"
-                                    height="35"
-                                    class="img-fluid me-2"
-                                />
-                                Minda Musuma
-                            </a>
+                            <Links
+                                href="/signup"
+                                cssClass="nav-link text-dark"
+                                content="Profil"
+                            />
+                        </li>
+                    </ul>
+                    <Links href="/signup" cssClass="d-none d-lg-none">Minda Musuma</Links>
                         </li>
                     </ul>
                     <a href="/signup" class="d-none d-lg-block">
@@ -78,7 +94,7 @@ const title = "Klinik Sehat | Jadwal Dokter";
         </nav>
     </header>
 
-    <div class="container mx-auto mt-4 font-iosevka">
+    <div class="container mx-5 mt-4 font-iosevka">
         <div class="mb-4">
             <h2 class="fw-bold">Jadwal Dokter</h2>
             <p class="text-muted">

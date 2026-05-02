@@ -8,7 +8,7 @@ const title = "Klinik Sehat | Beranda";
 	<header>
 		<nav class="navbar navbar-expand-lg bg-white">
 			<div class="container-fluid text-center font-iosevka">
-				<a class="navbar-brand mx-5 text-dark" href="#">
+				<a class="navbar-brand mx-0 mx-lg-5 text-dark" href="/">
 					<strong>Klinik Sehat</strong></a
 				>
 				<button
@@ -31,7 +31,7 @@ const title = "Klinik Sehat | Beranda";
 							<a
 								class="nav-link active text-dark fw-bold"
 								aria-current="page"
-								href="#">Beranda</a
+								href="/">Beranda</a
 							>
 						</li>
 						<li class="nav-item">
@@ -70,7 +70,7 @@ const title = "Klinik Sehat | Beranda";
 					</ul>
 					<a href="/signup" class="d-none d-lg-block">
 						<!-- if display under large this list would be active-->
-						<picture class="mx-5">
+						<picture class="mx-0 mx-lg-5">
 							<source
 								srcset="https://ui-avatars.com/api/?rounded=true&name=Minda+Musuma&background=000&color=ffff&size=100"
 								type="image/png"
@@ -88,18 +88,22 @@ const title = "Klinik Sehat | Beranda";
 		</nav>
 	</header>
 
-	<div class="container mx-5 mt-4">
-		<div class="font-iosevka">
-			<h2>Selamat Datang di Klinik Sehat</h2>
-			<p class="text-muted">
-				Sistem Penjadwalan Dokter dan Reservasi Antrean
-			</p>
+	<div class="container-fluid px-3 px-sm-4 px-lg-5 mt-4 font-iosevka">
+		<div class="row">
+			<div class="col-12 col-md-8 col-lg-7">
+				<h1 class="hero-title display-6 fw-bold lh-1 mb-2 text-break">
+					Selamat Datang di Klinik Sehat
+				</h1>
+				<p class="hero-subtitle text-muted fs-6 mb-0">
+					Sistem Penjadwalan Dokter dan Reservasi Antrean
+				</p>
+			</div>
 		</div>
 	</div>
 
 	<!---Statistics Cards--->
 	<div
-		class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-3 mx-5 mt-1 mb-3 font-iosevka"
+		class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-3 px-3 px-sm-4 px-lg-5 mt-1 mb-3 font-iosevka"
 	>
 		<div class="col">
 			<div class="card h-100 border-0 shadow-sm p-3 custom-card">
@@ -156,7 +160,7 @@ const title = "Klinik Sehat | Beranda";
 	</div>
 
 	<!-- Jadwal Klinik -->
-	<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 mx-5 mt-5">
+	<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 px-3 px-sm-4 px-lg-5 mt-5">
 		<div class="col">
 			<div class="card h-55 border-0 shadow-sm p-1 custom-card">
 				<div class="card-body text-center font-iosevka">
@@ -267,4 +271,14 @@ const title = "Klinik Sehat | Beranda";
 			</div>
 		</div>
 	</div>
+
+	<style>
+		.hero-title {
+			font-size: clamp(1.9rem, 4vw, 3.25rem);
+		}
+
+		.hero-subtitle {
+			font-size: clamp(1rem, 1.5vw, 1.25rem);
+		}
+	</style>
 </Layout>
