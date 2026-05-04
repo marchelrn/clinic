@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/layouts.astro";
+import DoctorsJsonPanel from "../components/DoctorsJsonPanel.jsx";
 const title = "Klinik Sehat | Beranda";
 ---
 
@@ -90,8 +91,8 @@ const title = "Klinik Sehat | Beranda";
 
 	<div class="container-fluid px-3 px-sm-4 px-lg-5 mt-4 font-iosevka">
 		<div class="row">
-			<div class="col-12 col-md-8 col-lg-7">
-				<h1 class="hero-title display-6 fw-bold lh-1 mb-2 text-break">
+			<div class="col-9 col-md-8 col-lg-7">
+				<h1 class="hero-title display-6 mb-2 text-break">
 					Selamat Datang di Klinik Sehat
 				</h1>
 				<p class="hero-subtitle text-muted fs-6 mb-0">
@@ -106,17 +107,7 @@ const title = "Klinik Sehat | Beranda";
 		class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-3 px-3 px-sm-4 px-lg-5 mt-1 mb-3 font-iosevka"
 	>
 		<div class="col">
-			<div class="card h-100 border-0 shadow-sm p-3 custom-card">
-				<div class="d-flex align-items-center justify-content-between">
-					<div>
-						<p class="text-muted small mb-1">Total Dokter</p>
-						<p class="h2 fw-bold text-dark mb-0">3</p>
-					</div>
-					<div class="bg-primary p-2 rounded-2 text-white">
-						<i class="bi bi-person fs-4"></i>
-					</div>
-				</div>
-			</div>
+			<DoctorsJsonPanel client:load />
 		</div>
 		<div class="col">
 			<div class="card h-100 border-0 shadow-sm p-3 custom-card">
@@ -204,10 +195,10 @@ const title = "Klinik Sehat | Beranda";
 								class="card border-0 shadow-sm p-1 custom-card"
 							>
 								<div
-									class="card-body d-flex align-items-center gap-3"
+									class="card-body d-flex text-center gap-3"
 								>
-									<p>#001</p>
-									<div>
+									<p class="ms-5">#001</p>
+									<div class="ms-4">
 										<p class="mb-0 fw-bold">Minda Musuma</p>
 										<small class="text-muted"
 											>Jadwal: 09:00 - 09:30</small
@@ -219,10 +210,10 @@ const title = "Klinik Sehat | Beranda";
 								class="card border-0 shadow-sm p-1 custom-card mt-2"
 							>
 								<div
-									class="card-body d-flex align-items-center gap-3"
+									class="card-body d-flex text-center gap-3"
 								>
-									<p>#002</p>
-									<div>
+									<p class="ms-5">#002</p>
+									<div class="ms-4">
 										<p class="mb-0 fw-bold">Minda Musuma</p>
 										<small class="text-muted"
 											>Jadwal: 09:00 - 09:30</small
@@ -234,10 +225,10 @@ const title = "Klinik Sehat | Beranda";
 								class="card border-0 shadow-sm p-1 custom-card mt-2"
 							>
 								<div
-									class="card-body d-flex align-items-center gap-3"
+									class="card-body d-flex text-center gap-3"
 								>
-									<p>#003</p>
-									<div>
+									<p class="ms-5">#003</p>
+									<div class="ms-4">
 										<p class="mb-0 fw-bold">Minda Musuma</p>
 										<small class="text-muted"
 											>Jadwal: 09:00 - 09:30</small
@@ -274,7 +265,7 @@ const title = "Klinik Sehat | Beranda";
 
 	<style>
 		.hero-title {
-			font-size: clamp(1.9rem, 4vw, 3.25rem);
+			font-size: clamp(1.9rem, 4vw, 2.5rem);
 		}
 
 		.hero-subtitle {

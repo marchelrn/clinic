@@ -1,0 +1,7 @@
+---
+import api from "../services/api.js";
+const response = await fetch(`${api}/doctors`);
+const data = await response.json();
+---
+
+<p class="h2 fw-bold text-dark mb-0">{data.length}</p>
