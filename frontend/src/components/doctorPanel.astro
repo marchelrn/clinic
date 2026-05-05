@@ -1,0 +1,21 @@
+---
+import api from "../services/api";
+
+const { doctor, show = "count" } = Astro.props;
+let data = [];
+
+if (show === "count" || !doctor) {
+    try {
+        const endpoint = await fetch(`${api.defaults.baseURL}/api/doctors`);
+        data = await endpoint.json();
+    } catch {
+        data = [];
+    }
+}
+
+const selectedDoctor = doctor || data[0];
+---
+
+{show === "count" && <p class="h2 fw-bold text-dark mb-0">{data.length}</p>}
+{show === "name" && <h4 class="fw-bold mb-1">{selectedDoctor?.name || "Dokter"}</h4>}
+{show === "specialty" && <p class="text-primary mb-0">Spesialis {selectedDoctor?.specialization || "Spesialis"}</p>}
