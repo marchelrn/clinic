@@ -4,36 +4,79 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Doctor;
+use App\Helpers\ApiResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class DoctorController extends Controller
 {
     public function index()
     {
-        return response()->json(Doctor::all());
+        $doctors = Doctor::all();
+        if ($doctors->isEmpty()) {
+            return ApiResponse::error("No doctors found", 404);
+        }
+        return ApiResponse::success("Doctors retrieved successfully", $doctors, 200);
     }
 
     public function store(Request $request)
     {
-        $doctor = Doctor::create($request->all());
-        return response()->json($doctor, 201);
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:255',
+            'specialization' => 'required|string|max:255',
+            'phone' => 'required|integer|min:9|unique:doctors,phone',
+            'email' => 'required|email|unique:doctors,email',
+            'password' => 'required|string|min:6'
+        ]);
+
+        if ($validator->fails()) {
+            return ApiResponse::error("Validation failed", 422, $validator->errors());
+        }
+
+        $payload = $validator->validated();
+        $doctor = Doctor::create($payload);
+
+        if (!$doctor) {
+            return ApiResponse::error("Failed to create doctor", 500);
+        }
+
+        return ApiResponse::success("Doctor created successfully", $doctor, 201);
     }
 
     public function show(Doctor $doctor)
     {
-        return response()->json($doctor);
+        if (!$doctor) {
+            return ApiResponse::error("Doctor not found", 404);
+        }
+        return ApiResponse::success("Doctor retrieved successfully", $doctor, 200);
     }
 
     public function update(Request $request, Doctor $doctor)
     {
-        $doctor->update($request->all());
-        return response()->json($doctor);
+        $validator = Validator::make($request->all(), [
+            'name' => 'string|max:255',
+            'specialization' => 'string|max:255',
+            'phone' => 'integer|min:9|unique:doctors,phone',
+            'email' => 'email|unique:doctors,email',
+            'password' => 'string|min:6'
+        ]);
+
+        if ($validator->fails()) {
+            return ApiResponse::error("Validation failed", 422, $validator->errors());
+        }
+
+        $payload = $validator->validated();
+        $doctor->update($payload);
+        return ApiResponse::success("Doctor updated successfully", $doctor, 200);
     }
 
     public function destroy(Doctor $doctor)
     {
         $doctor->delete();
-        return response()->json(['message' => 'Doctor deleted']);
+        if (!$doctor) {
+            return ApiResponse::error("Failed to delete doctor", 500);
+        }
+        return ApiResponse::success("Doctor deleted successfully", $doctor->only('name'), 200);
     }
 }
     
